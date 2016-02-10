@@ -4,7 +4,7 @@ if ARGV.empty?
 	abort "Usage: #{$0} [info] [error] [warning]"
 end
 
-conn = Bunny.new(hostmane: 'http://localhost:15672', user: 'admin', password: 'mypass')
+conn = Bunny.new(hostname: '172.17.0.3')
 conn.start
 
 ch = conn.create_channel
