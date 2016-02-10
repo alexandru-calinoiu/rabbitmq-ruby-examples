@@ -30,7 +30,10 @@ class FibonacciServer
 		when 0 then 0
 		when 1 then 1
 		else
-			fib(n - 1) + fib(n - 2)
+			@h ||= {}
+			@h[n - 1] ||= fib(n - 1)
+			@h[n - 2] ||= fib(n - 2)
+			@h[n - 1] + @h[n - 2]
 		end
 	end
 end
